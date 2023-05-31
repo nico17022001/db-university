@@ -15,7 +15,7 @@ WHERE `cfu` > 10
 
 SELECT * 
 FROM `students` 
-WHERE YEAR(`date_of_birth`) > 1993
+WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`,CURDATE()) > 30;
 
 
 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
@@ -38,7 +38,10 @@ AND date = '2020-06-21'
 
 6. Selezionare tutti i corsi di laurea magistrale (38)
 
-Non l'ho trovato
+SELECT * 
+FROM `exams`
+WHERE `level` = `magistrale`
+
 
 7. Da quanti dipartimenti è composta l'università? (12)
 
